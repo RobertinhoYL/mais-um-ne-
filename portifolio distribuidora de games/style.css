@@ -172,6 +172,29 @@ nav ul li a:hover {
     background-color: #ffc700;
 }
 
+/* Video Search Section */
+.video-search {
+    padding: 20px 0;
+    text-align: center;
+}
+
+#keyword {
+    padding: 10px;
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#video-container {
+    margin-top: 20px;
+    display: none; /* Inicialmente oculto */
+}
+
+video {
+    max-width: 100%;
+    height: auto;
+}
+
 /* Newsletter Section */
 .newsletter {
     background-color: #1f1f1f; /* Cinza escuro para o fundo da newsletter */

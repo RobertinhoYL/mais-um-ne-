@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SGN Network - Destaques</title>
+    <title>Game Distribution - Destaques</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <style>
+        #video-container {
+            display: none; /* Inicialmente oculto */
+            margin-top: 20px; /* Espaço acima do vídeo */
+        }
+    </style>
 </head>
 <body>
     <header class="main-header">
@@ -72,6 +78,21 @@
                 </form>
             </div>
         </section>
+
+        <!-- Campo de busca por palavra-chave -->
+        <section class="video-search">
+            <div class="container">
+                <h2>Veja um vídeo relacionado</h2>
+                <input type="text" id="keyword" placeholder="Digite a palavra-chave">
+                <div id="video-container">
+                    <h2>Vídeo:</h2>
+                    <video width="600" controls>
+                        <source id="video-source" src="" type="video/mp4">
+                        Seu navegador não suporta o elemento de vídeo.
+                    </video>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -79,5 +100,25 @@
             <p>&copy; 2024 Game Distribution. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <script>
+        const keywordInput = document.getElementById('keyword');
+        const videoContainer = document.getElementById('video-container');
+        const videoSource = document.getElementById('video-source');
+
+        keywordInput.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                const keyword = keywordInput.value.toLowerCase();
+                if (keyword === 'sillibily') { // Substitua 'exemplo' pela palavra-chave desejada
+                    videoSource.src = 'VS_Yourself_-_Hit_Single_Silly_Billy.mp4'; // Substitua pelo caminho do seu vídeo
+                    videoContainer.style.display = 'block'; // Exibe o vídeo
+                    videoSource.parentElement.load(); // Carrega o vídeo
+                } else {
+                    alert('Palavra-chave não encontrada.'); // Mensagem para palavras-chave não correspondentes
+                }
+                keywordInput.value = ''; // Limpa o campo de entrada
+            }
+        });
+    </script>
 </body>
 </html>
